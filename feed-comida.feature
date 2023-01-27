@@ -20,3 +20,12 @@ And Admnistrador escolhe a seção de edição na aba de inserção e remoção 
 And Admistrador escolhe o tipo de prato que quer adicionar: sobremesa, prato principal, couvert e bebida
 When Admnistrador insere o prato que contém foto, informações sobre o prato como um pequeno resumo do que o compõe, o preço etc
 Then O Prato recém adicionado é visível a todos os tipos de usuário na tela de feed de comida.
+
+
+Cenário: Remoção de um prato no site 
+Given Usuário logado como admnistrador que se encontra na tela do feed de comidas 
+And Admnistrador escolhe a seção de edição na aba de inserção e remoção de um novo prato 
+And Admistrador escolhe o tipo de prato que quer remover: sobremesa, prato principal, couvert e bebida
+When Admnistrador remove o prato que contém foto, informações sobre o prato como um pequeno resumo do que o compõe, o preço etc
+Then O Prato recém removido não é mais visível a todos os tipos de usuário na tela de feed de comida.
+And O prato adicionado vai para seção de lixeira (seção somente vista pelos administradores), caso queira adicionar o mesmo prato posteriormente
