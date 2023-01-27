@@ -6,4 +6,5 @@ then armazena o cartao em forma de pagamento
 scenario selecionar formas de pagamento do pedido
 when fazer uma lista de opcoes de escolha
 then adicao de cupom de desconto
+then adicao de brinde
 
