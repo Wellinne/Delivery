@@ -12,7 +12,7 @@ When Avaliação (não-obrigatória) é selecionada na seção de avaliações d
 And Usuário digita a avaliação  e escreve conforme sua opnião (mudei aqui)
 Then É notório a visualização por na seção de comentários e avaliação todas as avaliações deixadas anteriormente por compras anteriores de outros clientes
 e também a adicionada recentemente.
-
+Then
 
 Cenário: Inserção de um prato no site
 Given Usuário logado como admnistrador que se encontra na tela do feed de comidas 
