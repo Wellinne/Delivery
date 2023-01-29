@@ -15,3 +15,9 @@ Given Usuário é cadastrado
 And Usuário está na tela de perfil do aplicativo
 When Usuário clica em "Favoritos"
 Then Usuário é redirecionado para uma página onde é possível visualizar os pratos e os restaurantes que ele marcou como favorito
+
+Cenário: Configurações do aplicativo
+Given Usuário é cadastrado
+And Usuário está na tela de perfil do aplicativo
+When Usuário clica em "Configurações"
+Then Usuário é redirecionado para uma página com as seguintes opções: Gerenciar notificações, Sobre esta versão, Limpar histórico de busca e Sair.
