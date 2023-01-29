@@ -20,4 +20,10 @@ Cenário: Configurações do aplicativo
 Given Usuário é cadastrado
 And Usuário está na tela de perfil do aplicativo
 When Usuário clica em "Configurações"
-Then Usuário é redirecionado para uma página com as seguintes opções: Gerenciar notificações, Sobre esta versão, Limpar histórico de busca e Sair.
+Then Usuário é redirecionado para uma página com as seguintes opções: Gerenciar notificações, Sobre esta versão, Limpar histórico de busca, Sair, etc.
+
+Cenário: Chat com restaurantes
+Given Usuário é cadastrado
+And Usuário está na tela de perfil do aplicativo
+When Usuário clica em "Chat"
+Then Usuário é redirecionado para uma página com o histórico de conversas entre ele e os restaurantes
