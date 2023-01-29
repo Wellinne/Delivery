@@ -27,3 +27,9 @@ Given Usuário é cadastrado
 And Usuário está na tela de perfil do aplicativo
 When Usuário clica em "Chat"
 Then Usuário é redirecionado para uma página com o histórico de conversas entre ele e os restaurantes
+
+Cenário: Página de Ajuda
+Given Usuário é cadastrado
+And Usuário está na tela de perfil do aplicativo
+When Usuário clica em "Ajuda"
+Then Usuário é redirecionado para uma página que possui algumas perguntas frequentes.
