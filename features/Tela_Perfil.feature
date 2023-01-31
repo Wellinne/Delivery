@@ -33,3 +33,5 @@ Given Usuário é cadastrado
 And Usuário está na tela de perfil do aplicativo
 When Usuário clica em "Ajuda"
 Then Usuário é redirecionado para uma página que possui algumas perguntas frequentes, além de poder enviar mensagens para o suporte.
+
+# commit1 na main
