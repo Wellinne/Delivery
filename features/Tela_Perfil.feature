@@ -21,7 +21,6 @@ Given Usuário é cadastrado
 And Usuário está na tela de perfil do aplicativo
 When Usuário clica em "Configurações"
 Then Usuário é redirecionado para uma página com as seguintes opções: Gerenciar notificações, Sobre esta versão, Limpar histórico de busca, Sair, etc.
-Then Usuário é redirecionado para uma página com as seguintes opções: Gerenciar notificações, Sobre esta versão, Limpar histórico de busca, Sair, etc.
 
 Cenário: Chat com restaurantes
 Given Usuário é cadastrado
@@ -33,4 +32,7 @@ Cenário: Página de Ajuda
 Given Usuário é cadastrado
 And Usuário está na tela de perfil do aplicativo
 When Usuário clica em "Ajuda"
-Then Usuário é redirecionado para uma página que possui algumas perguntas frequentes.
+Then Usuário é redirecionado para uma página que possui algumas perguntas frequentes, além de poder enviar mensagens para o suporte.
+
+# atualização desenvolvimento commit1
+# atualização desenvolvimento commit2
