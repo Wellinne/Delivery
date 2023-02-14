@@ -47,6 +47,17 @@ Feature: Editar Perfil no sistema
         Then uma mensagem de erro deve ser exibida informando o campo preenchido incorretamente
         And as informações do meu perfil não devem atualizadas.
 
+    Scenario: Editar perfil mal sucedido por endereço não preenchido corretamente
+        Given estou logado no sistema
+        When clicar no botão "Editar Perfil"
+        Then eu devo ser redirecionado para a página edição de Perfil
+        And eu vejo os meus dados atuais preenchidos no campo de formulário
+        And eu clicar em "Editar"
+        When eu editar o campo obrigatório "Endereço" com o valor "" 
+        And clicar no botão "Salvar"
+        Then uma mensagem de erro deve ser exibida informando o campo preenchido incorretamente
+        And as informações do meu perfil não devem atualizadas.
+
     Scenario: Editar perfil mal sucedido por email não preenchido corretamente
         Given estou logado no sistema
         When clicar no botão "Editar Perfil"
