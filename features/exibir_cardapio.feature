@@ -5,13 +5,20 @@ so that exibir itens listados
 
 scennario: exibir informações dos produtos
 given exibir informações dos produtos cadastrados
-when clicar "nome_produto" e apresentar as informações
+when clicar "Staker" e apresentar as informações
 then página adicionar no carrinho
 
 scennario: pesquisar os produtos listados
-given pesquisar produto "nome_produto"
+given pesquisar produto "Staker"
 when verificar nos produtos cadastrados
-and verificar se "nome_produto" está no cardápio
+and verificar se "Staker" está no cardápio
+then retorna produto encontrado
+and retorna erro se produto não encontrado
+
+scennario: pesquisar os produtos listados
+given pesquisar produto "Pizza"
+when verificar nos produtos cadastrados
+and verificar se "Pizza" está no cardápio
 then retorna produto encontrado
 and retorna erro se produto não encontrado
 
