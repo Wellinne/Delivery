@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="shortcut icon" href="burguer.ico" type="image/x-icon">
+        <title>Informacoes Pedido</title>
+        <style>
+            .pagina
+            {
+                width: 960px;
+	            color: #444;
+	            margin: 0 auto;
+            }
+            .cabecalho
+            {
+	            height:100px;
+            }
+            .logo-cabecalho
+            {
+                float:left;
+            }
+            .menu
+            {
+                text-align: center;
+                background:#FF9D01;
+            }
+            .corpo
+            {
+                position:relative;
+                overflow:hidden;
+            }
+            .cardapio
+            {
+                float:left;
+            }
+            .cardapio, .cardapio:before
+            {
+                width:  960px;
+                height: 640px;
+            }
+            .cardapio:before
+            {
+                position:absolute;
+                top:0;
+                left:0;
+                bottom:0;
+                background:#fff;
+                z-index:-1;
+                content:'';
+            }
+            .rodape
+            {
+	            padding:20px;
+	            text-align:right;
+            }
+            .img-logo
+            {
+                width:  100px;
+                height: 53px;
+            }
+            .espacamento
+            {
+	            padding:20px;
+            }
+            #corpright 
+            {
+                display: block;
+                background: #FF9D01;
+                padding:13px 20px;
+            }
+            .item
+            {
+                align-items: center;
+                border-color: black;
+                width:  400px;
+                height: 400px;
+            }
+            .img-item
+            {
+                width:  250px;
+                height: 144px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="pagina">
+            <div class="cabecalho">
+                <div class="logo_cabecalho">
+                    <a href="index.html"><img src="logo.png" alt="Logo Bucho Cheio"></a>
+                </div>
+            </div>
+            
+            <div class="menu">
+				<h2>Informacoes Pedido</h2>
+			</div>
+
+            <div class="corpo">
+                <div class="cardapio">
+                    <div class="espacamento">
+                        <div class="item">
+                            <img class="img-item" src="https://img.freepik.com/fotos-gratis/hamburguer-de-vista-frontal-em-um-carrinho_141793-15542.jpg?size=626&ext=jpg"><br>
+                            Staker<br>
+                            19,99
+                        </div>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="rodape">
+                <span id="corpright"><b>&copy;Bucho Cheio</b></span>
+            </div>
+        </div>
+        
+    </body>
+</html>
