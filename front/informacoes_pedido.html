@@ -8,7 +8,8 @@
         <style>
             .pagina
             {
-                width: 960px;
+                width: 1024px;
+                height: 1024px;
 	            color: #444;
 	            margin: 0 auto;
             }
@@ -19,6 +20,17 @@
             .logo-cabecalho
             {
                 float:left;
+                
+            }
+            .usr-cabecalho
+            {
+                float:right;
+                text-align: right;
+            }
+            .car-cabecalho
+            {
+                float: none;
+                display: block;
             }
             .menu
             {
@@ -36,8 +48,7 @@
             }
             .cardapio, .cardapio:before
             {
-                width:  960px;
-                height: 640px;
+                width:  60%;
             }
             .cardapio:before
             {
@@ -48,6 +59,28 @@
                 background:#fff;
                 z-index:-1;
                 content:'';
+            }
+            .lateral
+            {
+                float: right;
+            }
+            .lateral, .lateral::before
+            {
+                width: 40%;
+            }
+            .lateral:before
+            {
+                content: '';
+                position:absolute;
+                top: 0;
+                bottom: 0;
+	            right:0;
+                z-index: -1;
+                background: #fff;
+            }
+            .espacamento
+            {
+	            padding:20px;
             }
             .rodape
             {
@@ -61,35 +94,65 @@
             textarea 
             {
                 margin: 15px 0;
-                width: 250px;
-                height: 100px
-            }
-            .img-logo
-            {
-                width:  100px;
-                height: 53px;
-            }
-            .espacamento
-            {
-	            padding:20px;
+                width: 450px;
+                height: 300px;
+                background-color: #D9D9D9;
             }
             #corpright 
             {
                 display: block;
-                background: #FF9D01;
                 padding:13px 20px;
             }
             .item
             {
                 align-items: center;
                 border-color: black;
-                width:  400px;
-                height: 400px;
+                width:  700px;
+                height: 950px;
             }
             .img-item
             {
-                width:  250px;
-                height: 144px;
+                width:  530px;
+                height: 418px;
+            }
+            .ingredientes
+            {
+                text-align: center;
+                background-color: #FF9D01;
+                width:  358px;
+                height: 345px;
+            }
+            #save
+            {
+                width: 100px;
+                height: 30px;
+                background-color: #FF9D01;
+            }
+            #menos
+            {
+                width: 60px;
+                height: 30px;
+                float: calc(-);
+                background-color: #FFBA4D;
+            }
+            #qtd
+            {
+                width: 60px;
+                height: 30px;
+                background-color: #fff;
+            }
+            #mais
+            {
+                width: 60px;
+                height: 30px;
+                float: calc(+);
+                background-color: #FF9D01;
+            }
+            #valor
+            {
+                width: 100px;
+                height: 30px;
+                background-color: #FF9D01;
             }
         </style>
     </head>
@@ -98,6 +161,14 @@
             <div class="cabecalho">
                 <div class="logo_cabecalho">
                     <a href="index.html"><img src="logo.png" alt="Logo Bucho Cheio"></a>
+                </div>
+
+                <div class="usr_cabecalho">
+                    <h2>Gerenciar</h2>
+                </div>
+
+                <div class="car_cabecalho">
+                    <img src="carrinnho.png" alt="carrinho de compras">
                 </div>
             </div>
             
@@ -110,18 +181,56 @@
                     <div class="espacamento">
                         <div class="item">
                             <img class="img-item" src="https://img.freepik.com/fotos-gratis/hamburguer-de-vista-frontal-em-um-carrinho_141793-15542.jpg?size=626&ext=jpg"><br>
-                            Staker<br>
-                            19,99
-                            <label>Observações:
-                                <textarea>
-                                </textarea>
+                            <h1>Staker</h1>
+                            <h1>19,99</h1>
+                            <form name="Observacoes" action="" method="post">
+                                
+                                    <textarea>Observações:
+                                    </textarea>
+                                <input type="submit" value="Enviar">
+                            </form>                            
                         </div>
                     </div>
                 </div> 
+
+                <div class="lateral">
+                    <div class="espacamento">
+                        <div class="ingredientes">
+                            <h2><b>Ingredientes:</b></h2>
+                                <h3>
+                                    * 500g de acém;<br>
+                                    * Azeite;<br>
+                                    * Sal e pimenta-do-reino;<br>
+                                    * Alface;<br>
+                                    * Tomate;<br>
+                                    * Pão de hambúrguer;<br>
+                                    * Maionese verde;<br>
+                                    * Mussarela comum ;<br>
+                                    * Cebola.<br>
+                                </h3>
+                        </div>
+                        <br><br><br><br><br><br><br><br><br><br>
+                        <form name="adicionais" action="" method="post">
+                            <h2><b>Adicionais:(+3 Reais)</b></h2><br>
+                            <label for="POST-bacon">Bacon
+                            <input type="checkbox" id="POST-bacon" name="bacon"/>
+                            <label for="POST-calabresa">Calabresa
+                            <input type="checkbox" id="POST-calabresa" name="calabresa">
+                            <label for="POST-ketchup">Ketchup
+                            <input type="checkbox" id="POST-ketchup" name="ketchup">
+                            <label for="POST-maionese">Maionese
+                            <input type="checkbox" id="POST-maionese" name="maionese">
+                        </form>
+                    </div>
+                </div>
             </div>
 
             <div class="rodape">
-                <span id="corpright"><b>&copy;Bucho Cheio</b></span>
+                <input id="menos" type="submit" value="-">
+                <input id="qtd" type="submit" value="1">
+                <input id="mais" type="submit" value="+">
+                <input id="valor" type="submit" value="19,99">
+                <input id="save" type="submit" value="Adicionar">
             </div>
         </div>
         
