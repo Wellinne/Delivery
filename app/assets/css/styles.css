@@ -1,0 +1,119 @@
+:root{
+    --cor1: #FFF2DA;
+    --cor2: #FFBA4D;
+    --cor3: #FF9D01;
+    --cor4: #804E00;
+    --cor5: #161616;
+    --cor6: #BDBDBD;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+/*
+font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans', sans-serif;
+*/
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+    background-color: var(--cor5);
+    background-size: cover;
+    background-position: center center;
+}
+
+h1, h2, h3, h4, h5, h5{
+    font-size: 2rem;
+}
+
+a{
+    text-decoration: none;
+}
+
+.main-content{
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.menu{
+    background-color: white;
+    position: fixed;
+    width: 100%;
+}
+
+.menu-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center center;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.menu h1{
+    font-size: 1rem;
+}
+
+.menu h1 a{
+    color: inherit;
+}
+
+.menu nav{
+    list-style: none;
+    display: flex;
+}
+
+.menu li div{
+    padding: 1rem;
+}
+
+.main-right{
+    display: flex;
+    align-items: center;
+}
+
+.cost{
+    font-size: .75rem;
+    line-height: 1rem;
+    display: block;
+    color: var(--cor3);
+    padding-left: 3px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.items {
+    font-size: .625rem;
+    line-height: .75rem;
+    display: block;
+    color: var(--cor3);
+    padding-left: 3px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    display: inline;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.bag{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding-left: 30px;
+}
+
+.containerImage{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
