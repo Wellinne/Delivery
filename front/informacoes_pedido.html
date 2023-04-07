@@ -3,177 +3,41 @@
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="shortcut icon" href="burguer.ico" type="image/x-icon">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Bucho Cheio</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/Informacoes/styles.css">
+        <link rel="stylesheet" href="fontawesome/css/all.min.css">
+        <link rel="shortcut icon" href="assets/images/burguer.ico" type="image/x-icon">
         <title>Informacoes Pedido</title>
-        <style>
-            .pagina
-            {
-                width: 1024px;
-                height: 1024px;
-	            color: #444;
-	            margin: 0 auto;
-            }
-            .cabecalho
-            {
-	            height:100px;
-            }
-            .logo-cabecalho
-            {
-                float:left;
-                
-            }
-            .usr-cabecalho
-            {
-                float:right;
-                text-align: right;
-            }
-            .car-cabecalho
-            {
-                float: none;
-                display: block;
-            }
-            .menu
-            {
-                text-align: center;
-                background:#FF9D01;
-            }
-            .corpo
-            {
-                position:relative;
-                overflow:hidden;
-            }
-            .cardapio
-            {
-                float:left;
-            }
-            .cardapio, .cardapio:before
-            {
-                width:  60%;
-            }
-            .cardapio:before
-            {
-                position:absolute;
-                top:0;
-                left:0;
-                bottom:0;
-                background:#fff;
-                z-index:-1;
-                content:'';
-            }
-            .lateral
-            {
-                float: right;
-            }
-            .lateral, .lateral::before
-            {
-                width: 40%;
-            }
-            .lateral:before
-            {
-                content: '';
-                position:absolute;
-                top: 0;
-                bottom: 0;
-	            right:0;
-                z-index: -1;
-                background: #fff;
-            }
-            .espacamento
-            {
-	            padding:20px;
-            }
-            .rodape
-            {
-	            padding:20px;
-	            text-align:right;
-            }
-            label, textarea
-            {
-                display: block;
-            }
-            textarea 
-            {
-                margin: 15px 0;
-                width: 450px;
-                height: 300px;
-                background-color: #D9D9D9;
-            }
-            #corpright 
-            {
-                display: block;
-                padding:13px 20px;
-            }
-            .item
-            {
-                align-items: center;
-                border-color: black;
-                width:  700px;
-                height: 950px;
-            }
-            .img-item
-            {
-                width:  530px;
-                height: 418px;
-            }
-            .ingredientes
-            {
-                text-align: center;
-                background-color: #FF9D01;
-                width:  358px;
-                height: 345px;
-            }
-            #save
-            {
-                width: 100px;
-                height: 30px;
-                background-color: #FF9D01;
-            }
-            #menos
-            {
-                width: 60px;
-                height: 30px;
-                float: calc(-);
-                background-color: #FFBA4D;
-            }
-            #qtd
-            {
-                width: 60px;
-                height: 30px;
-                background-color: #fff;
-            }
-            #mais
-            {
-                width: 60px;
-                height: 30px;
-                float: calc(+);
-                background-color: #FF9D01;
-            }
-            #valor
-            {
-                width: 100px;
-                height: 30px;
-                background-color: #FF9D01;
-            }
-        </style>
     </head>
     <body>
-        <div class="pagina">
-            <div class="cabecalho">
-                <div class="logo_cabecalho">
-                    <a href="index.html"><img src="logo.png" alt="Logo Bucho Cheio"></a>
-                </div>
+        <div>
+            <aside class="cabecalho">
+                <section class="main-content cabecalho-content">
+                    <a href="index.html" class="containerImage">
+                        <h1><img src="assets/images/logo.png" height="40" alt="logo Bucho Cheio"></h1>
+                    </a>
+                    <nav class="main-right">
+                        <li class="user">
+                            <p><i class="fa-solid fa-user" style="color: #ff9d01;"></i></p>
+                        </li>
+                        <li class="bag">
+                            <p class="imagem2"><i class="fa-solid fa-bag-shopping" style="color: #ff9d01;"></i></p>
+                            <p><span class="cost">R$ 0,00</span>
+                                <span class="items">0 itens</span>
+                            </p>
+                        </li>
+                    </nav>
+                </section>
+            </aside>
 
-                <div class="usr_cabecalho">
-                    <h2>Gerenciar</h2>
-                </div>
-
-                <div class="car_cabecalho">
-                    <img src="carrinnho.png" alt="carrinho de compras">
-                </div>
-            </div>
-            
             <div class="menu">
-				<h2>Informacoes Pedido</h2>
+                <h2>Informações Pedido</h2>
 			</div>
 
             <div class="corpo">
@@ -184,10 +48,8 @@
                             <h1>Staker</h1>
                             <h1>19,99</h1>
                             <form name="Observacoes" action="" method="post">
-                                
-                                    <textarea>Observações:
-                                    </textarea>
-                                <input type="submit" value="Enviar">
+                                <textarea>
+                                </textarea>
                             </form>                            
                         </div>
                     </div>
@@ -216,10 +78,10 @@
                             <input type="checkbox" id="POST-bacon" name="bacon"/>
                             <label for="POST-calabresa">Calabresa
                             <input type="checkbox" id="POST-calabresa" name="calabresa">
-                            <label for="POST-ketchup">Ketchup
-                            <input type="checkbox" id="POST-ketchup" name="ketchup">
-                            <label for="POST-maionese">Maionese
-                            <input type="checkbox" id="POST-maionese" name="maionese">
+                            <label for="POST-milhoervilha">Milho/Ervilha
+                            <input type="checkbox" id="POST-milho" name="milhoervilha">
+                            <label for="POST-azeitona">Azeitona
+                            <input type="checkbox" id="POST-azeitona" name="azeitona">
                         </form>
                     </div>
                 </div>

@@ -3,73 +3,37 @@
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="shortcut icon" href="burguer.ico" type="image/x-icon">
-        <title>Index</title>
-        <style>
-            .pagina
-            {
-                width: 1440px;
-                height: 1024px;
-	            color: #444;
-	            margin: 0 auto;
-            }
-            .cabecalho
-            {
-	            height:100px;
-            }
-            .logo-cabecalho
-            {
-                float:left;
-            }
-            .corpo
-            {
-                position:relative;
-                overflow:hidden;
-            }
-            .cardapio
-            {
-                float:left;
-            }
-            .cardapio, .cardapio:before
-            {
-                width:  960px;
-                height: 640px;
-            }
-            .cardapio:before
-            {
-                position:absolute;
-                top:0;
-                left:0;
-                bottom:0;
-                background:#fff;
-                z-index:-1;
-                content:'';
-            }
-            .espacamento
-            {
-	            padding:20px;
-            }
-            .rodape
-            {
-	            padding:20px;
-	            text-align:right;
-            }
-            #corpright 
-            {
-                display: block;
-                background: #FF9D01;
-                padding:13px 20px;
-            }
-        </style>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Bucho Cheio</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/Index/styles.css">
+        <link rel="stylesheet" href="fontawesome/css/all.min.css">
+        <link rel="shortcut icon" href="assets/images/burguer.ico" type="image/x-icon">
     </head>
     <body>
-        <div class="pagina">
-            <div class="cabecalho">
-                <div class="logo_cabecalho">
-                    <a href="index.html"><img src="logo.png" alt="Logo Bucho Cheio"></a>
-                </div>
-            </div>
-            <hr>
+        <div>
+            <aside class="cabecalho">
+                <section class="main-content cabecalho-content">
+                    <a href="index.html" class="containerImage">
+                        <h1><img src="assets/images/logo.png" height="40" alt="logo Bucho Cheio"></h1>
+                    </a>
+                    <nav class="main-right">
+                        <li class="user">
+                            <p><i class="fa-solid fa-user" style="color: #ff9d01;"></i></p>
+                        </li>
+                        <li class="bag">
+                            <p class="imagem2"><i class="fa-solid fa-bag-shopping" style="color: #ff9d01;"></i></p>
+                            <p><span class="cost">R$ 0,00</span>
+                                <span class="items">0 itens</span>
+                            </p>
+                        </li>
+                    </nav>
+                </section>
+            </aside>
             <div class="corpo">
                 <div class="cardapio">
                     <div class="espacamento">
