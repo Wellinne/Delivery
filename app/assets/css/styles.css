@@ -50,8 +50,8 @@ a{
 
 .menu-content{
     display: flex;
-    justify-content: space-between;
-    align-items: center center;
+    justify-content: space-around; 
+    align-items: center; 
     padding-top: 0;
     padding-bottom: 0;
 }
@@ -79,11 +79,11 @@ a{
 }
 
 .cost{
+    padding-top: 3px;
     font-size: .75rem;
     line-height: 1rem;
     display: block;
     color: var(--cor3);
-    padding-left: 3px;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -92,7 +92,6 @@ a{
     line-height: .75rem;
     display: block;
     color: var(--cor3);
-    padding-left: 3px;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -109,11 +108,70 @@ p {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    padding-left: 30px;
+}
+
+.user{
+    padding-right: 30px;
 }
 
 .containerImage{
     display: flex;
     align-items: center;
     padding: 1rem;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    max-width: 40%;
+    margin: 0 1rem;
+}
+
+.search-input-wrapper {
+    display: flex;
+    align-items: center;
+    background-color: rgb(247, 247, 247);
+    border-radius: 25px; /* Aumente esse valor para bordas mais arredondadas */
+    padding: 0 1rem;
+}
+
+.search-bar input[type="text"] {
+    border: none;
+    background-color: transparent;
+    flex-grow: 1;
+    padding: 0.5rem;
+    outline: none;
+    border-radius: 0;
+    width: 30vw;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.search-icon,
+.clear-icon,
+.user-icon,
+.bag-icon {
+    color: var(--cor3);
+    cursor: pointer;
+    margin: 0 0.5rem;
+}
+
+.clear-icon {
+    display: none;
+}
+
+.search-bar:hover .clear-icon {
+    display: inline;
+}
+
+.bag-wrapper {
+    cursor: pointer;
+    display: flex;
+    border-radius: 25px; 
+    padding: 0px;
+    transition: background-color 0.3s ease-in-out; 
+}
+
+.bag:hover .bag-wrapper {
+    background-color: rgba(255, 157, 1, 0.2); 
 }

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bucho Cheio</title>
+    <link rel="Bucho Cheio" href="assets/img/favicon_io/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -21,19 +22,54 @@
             <a href="#" class="containerImage">
                 <h1><img src="assets/img/logo.png" height="40" alt="logo"></h1>
             </a>
+            <div class="search-bar">
+                <div class="search-input-wrapper">
+                    <i class="fa fa-search search-icon" onclick="search()"></i>
+                    <input type="text" placeholder="Busque por um item" name="search" oninput="toggleClearIcon(this)" onkeyup="checkForEnter(event)">
+                    <i class="fa fa-times clear-icon" onclick="clearSearch(this)" style="display: none;"></i>
+                </div>
+            </div>
             <nav class="main-right">
                 <li class="user">
-                    <p><i class="fa-solid fa-user" style="color: #ff9d01;"></i></p>
+                    <p><i class="fa-solid fa-user user-icon" onclick="redirectTo('user.html')"></i></p>
                 </li>
                 <li class="bag">
-                    <p class="imagem2"><i class="fa-solid fa-bag-shopping" style="color: #ff9d01;"></i></p>
-                    <p><span class="cost">R$ 0,00</span>
-                        <span class="items">0 itens</span>
-                    </p>
+                    <div class="bag-wrapper">
+                        <p><i class="fa-solid fa-bag-shopping bag-icon" onclick="redirectTo('bag.html')"></i></p>
+                        <p><span class="cost">R$ 0,00</span>
+                            <span class="items">0 itens</span>
+                        </p>
+                    </div>
                 </li>
             </nav>
         </section>
     </aside>
+    <script>
+        function toggleClearIcon(input) {
+            const clearIcon = input.nextElementSibling;
+            clearIcon.style.display = input.value ? 'inline' : 'none';
+        }
+
+        function clearSearch(clearIcon) {
+            const input = clearIcon.previousElementSibling;
+            input.value = '';
+            toggleClearIcon(input);
+            input.focus();
+        }
+
+        function checkForEnter(event) {
+            if (event.keyCode === 13) {
+                search();
+            }
+        }
+
+        function search() {
+            const input = document.querySelector('[name="search"]');
+            const searchTerm = input.value;
+            console.log('Pesquisar:', searchTerm);
+            // Implemente sua lógica de pesquisa aqui
+        }
+    </script>
 </body>
 
 </html>
