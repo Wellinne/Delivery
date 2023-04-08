@@ -22,6 +22,7 @@ body{
     background-color: var(--cor5);
     background-size: cover;
     background-position: center center;
+    width: 100%;
 }
 
 h1, h2, h3, h4, h5, h5{
@@ -115,7 +116,8 @@ p {
 }
 .cabecalho
 {
-    height:100px;            
+    width: 100%;
+    height:63px;            
 }
 .logo-cabecalho
 {
@@ -124,39 +126,70 @@ p {
 }
 .busca
 {
+    display: inline-block;
     float: right;
-    
+    list-style: none;
+    background-color:#FF9D01;
+    width: 20%;
+    padding-left: 30px;
 }
 .menu
 {
-    display: block;
-    padding: 25px 25px;
+    display:flex;
+    padding: 25px;
+    background-color:#FF9D01;
+}
+.menu-cardapio
+{
+    padding-left: 70px;
     text-align: center;
-    background:#FF9D01;
+    width: 80%;
 }
 .corpo
 {
     position:relative;
     overflow:hidden;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
 }
-.cardapio
+#cardapio
 {
-    display: block;
+    padding-top: 80px;
+    
 }
-.cardapio, .cardapio:before
+.grid-one-content
 {
-    width:  1440px;
-    height: 1024px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
 }
-.cardapio:before
+.grid
 {
-    position:absolute;
-    top:0;
-    left:0;
-    bottom:0;
-    background:#fff;
-    z-index:-1;
-    content:'';
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:var(--gap);
+    padding: 1rem;
+}
+.card
+{
+    cursor: pointer;
+    background-color: #FFF2DA;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 1px solid #fbe2bb;
+    transition: background-color 0.3s ease;
+}
+.card:hover
+{
+    border-style:none;
+}
+.card span
+{
+    color: green;
 }
 .espacamento
 {
@@ -165,24 +198,16 @@ p {
 .rodape
 {
     background-color: #fff;
-	padding:50px;
+	padding:13px 20px;
 	text-align:right;
+    background: #FF9D01;
 }
 #corpright
 {
     display: block;
-    background: #FF9D01;
-    padding:13px 20px;
-}
-.item1
-{
-    text-align: center;
-    width: 300px;
-    height: 200px;
-    margin-top:30px;
 }
 .img-item
 {
-    width: 250px;
-    height: 144px;
+    width: 100px;
+    height: auto;
 }
