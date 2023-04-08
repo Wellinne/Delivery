@@ -6,11 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bucho Cheio</title>
-    <link rel="Bucho Cheio" href="assets/img/favicon_io/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:ital,wght@0,400;0,700;1,400&family=Roboto:wght@500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="fontawesome/css/all.min.css">
@@ -25,7 +24,8 @@
             <div class="search-bar">
                 <div class="search-input-wrapper">
                     <i class="fa fa-search search-icon" onclick="search()"></i>
-                    <input type="text" placeholder="Busque por um item" name="search" oninput="toggleClearIcon(this)" onkeyup="checkForEnter(event)">
+                    <input type="text" placeholder="Busque por um item" name="search" oninput="toggleClearIcon(this)"
+                        onkeyup="checkForEnter(event)">
                     <i class="fa fa-times clear-icon" onclick="clearSearch(this)" style="display: none;"></i>
                 </div>
             </div>
@@ -44,6 +44,52 @@
             </nav>
         </section>
     </aside>
+    <section id="cardapio">
+        <div class="main-content grid-one-content">
+            <h2>Cardápio</h2>
+            <div class="grid">
+                <article class="card">
+                    <img src="https://source.unsplash.com/random/140x144" alt="Comida 1">
+                    <h3 class="name-item">Pizza Calabresa</h3>
+                    <span class="cost-item">R$ 50,00</span>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="item-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img class="modal-image" src="" alt="Item Imagem">
+            <div class="modal-info">
+                <h3 class="modal-title">Nome do item</h3>
+                <p class="modal-ingredients">Ingredientes: </p>
+                <div class="modal-ingredients-list">ingredientes</div>
+                <div class="modal-extras">
+                    <label for="extra">Adicionais:</label>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" name="extra1" id="extra1">
+                        <label for="extra1">Extra 1</label>
+                    </div>
+                </div>
+                <div class="modal-observations">
+                    <label for="observations">Observações:</label>
+                    <textarea id="observations" name="observations"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <div class="modal-quantity">
+                        <button type="button" onclick="decreaseQuantity()">-</button>
+                        <input type="number" id="quantity" value="1" min="1">
+                        <button type="button" onclick="increaseQuantity()">+</button>
+                    </div>
+                    <button type="button" class="button-add">Adicionar (R$ <span id="item-price">0,00</span>)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script>
         function toggleClearIcon(input) {
             const clearIcon = input.nextElementSibling;
@@ -69,6 +115,42 @@
             console.log('Pesquisar:', searchTerm);
             // Implemente sua lógica de pesquisa aqui
         }
+
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', function () {
+                const imageSrc = this.querySelector('img').src;
+                const title = this.querySelector('.name-item').textContent;
+                const modal = document.getElementById('item-modal');
+                modal.querySelector('.modal-image').src = imageSrc;
+                modal.querySelector('.modal-title').textContent = title;
+                modal.style.display = 'block';
+            });
+        });
+
+        document.querySelector('.close').addEventListener('click', function () {
+            document.getElementById('item-modal').style.display = 'none';
+        });
+
+        window.addEventListener('click', function (event) {
+            const modal = document.getElementById('item-modal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+        function increaseQuantity() {
+            const quantityInput = document.getElementById('quantity');
+            const currentQuantity = parseInt(quantityInput.value);
+            quantityInput.value = currentQuantity + 1;
+        }
+
+        function decreaseQuantity() {
+            const quantityInput = document.getElementById('quantity');
+            const currentQuantity = parseInt(quantityInput.value);
+            if (currentQuantity > 1) {
+                quantityInput.value = currentQuantity - 1;
+            }
+        }
+
     </script>
 </body>
 
