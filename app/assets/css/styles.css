@@ -49,91 +49,18 @@ a {
     padding: var(--gap);
 }
 
-.menu {
-    background-color: white;
-    position: fixed;
-    width: 100%;
-    border-bottom: 1px solid var(--cor3);
-}
-
-.menu-content {
+#heading-cardapio{
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
-.menu h1 {
-    font-size: 1rem;
-}
-
-.menu h1 a {
-    color: inherit;
-}
-
-.menu nav {
-    list-style: none;
-    display: flex;
-}
-
-.menu li div {
-    padding: 1rem;
-}
-
-.main-right {
-    display: flex;
-    align-items: center;
-}
-
-.cost {
-    padding-top: 3px;
-    font-size: .75rem;
-    line-height: 1rem;
-    display: block;
-    color: var(--cor3);
-    font-family: 'Montserrat', sans-serif;
-}
-
-.items {
-    font-size: .625rem;
-    line-height: .75rem;
-    display: block;
-    color: var(--cor3);
-    font-family: 'Montserrat', sans-serif;
-}
-
-p {
-    display: inline;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-}
-
-.bag {
-    display: flex;
+    align-items: end;
     justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-}
-
-.user {
-    padding-right: 30px;
-}
-
-.containerImage {
-    display: flex;
-    align-items: center;
-    padding: 1rem;
 }
 
 .search-bar {
     display: flex;
     align-items: center;
     flex-grow: 1;
-    max-width: 40%;
     margin: 0 1rem;
+    padding: 1rem;
 }
 
 .search-input-wrapper {
@@ -143,6 +70,8 @@ p {
     border-radius: 25px;
     /* Aumente esse valor para bordas mais arredondadas */
     padding: 0 1rem;
+    margin-left: auto; /* adicionado */
+    width: 40%;
 }
 
 .search-bar input[type="text"] {
@@ -184,10 +113,6 @@ p {
 .bag:hover .bag-wrapper {
     background-color: rgba(255, 157, 1, 0.2);
 }
-
-
-
-
 
 input[type="checkbox"] {
     -webkit-appearance: none;
@@ -269,7 +194,7 @@ input[type="checkbox"]:checked {
 .card {
     font-family: 'Roboto', sans-serif;
     cursor: pointer;
-    background-color: #fffaf1;
+    background-color: #FFF2DA;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -311,7 +236,7 @@ img {
 
 .modal-content {
     position: relative;
-    background-color: #fffaf1;
+    background-color: #FFF2DA;
     margin: 10% auto;
     padding: 20px;
     width: 80%;
@@ -319,6 +244,7 @@ img {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    color: var(--cor5)
 }
 
 .modal-image {
@@ -359,7 +285,7 @@ img {
 }
 
 .modal-ingredients-list {
-    border: 1px solid #ccc;
+    border: 1px solid var(--cor5);
     padding: 1rem;
     margin-bottom: 1rem;
 }
@@ -374,7 +300,7 @@ img {
     width: 100%;
     min-height: 100px;
     resize: none;
-    background-color: #fffaf1;
+    background-color: #FFF2DA;
 }
 
 .modal-quantity {

@@ -16,37 +16,19 @@
 </head>
 
 <body class="main-bg">
-    <aside class="menu">
-        <section class="main-content menu-content">
-            <a href="#" class="containerImage">
-                <h1><img src="assets/img/logo.png" height="40" alt="logo"></h1>
-            </a>
-            <div class="search-bar">
-                <div class="search-input-wrapper">
-                    <i class="fa fa-search search-icon" onclick="search()"></i>
-                    <input type="text" placeholder="Busque por um item" name="search" oninput="toggleClearIcon(this)"
-                        onkeyup="checkForEnter(event)">
-                    <i class="fa fa-times clear-icon" onclick="clearSearch(this)" style="display: none;"></i>
-                </div>
-            </div>
-            <nav class="main-right">
-                <li class="user">
-                    <p><i class="fa-solid fa-user user-icon" onclick="redirectTo('user.html')"></i></p>
-                </li>
-                <li class="bag">
-                    <div class="bag-wrapper">
-                        <p><i class="fa-solid fa-bag-shopping bag-icon" onclick="redirectTo('bag.html')"></i></p>
-                        <p><span class="cost">R$ 0,00</span>
-                            <span class="items">0 itens</span>
-                        </p>
-                    </div>
-                </li>
-            </nav>
-        </section>
-    </aside>
     <section id="cardapio">
         <div class="main-content grid-one-content">
-            <h2>Cardápio</h2>
+            <div id="heading-cardapio">
+                <h2>Cardápio</h2>
+                <div class="search-bar">
+                    <div class="search-input-wrapper">
+                        <i class="fa fa-search search-icon" onclick="search()"></i>
+                        <input type="text" placeholder="Busque por um item" name="search"
+                            oninput="toggleClearIcon(this)" onkeyup="checkForEnter(event)">
+                        <i class="fa fa-times clear-icon" onclick="clearSearch(this)" style="display: none;"></i>
+                    </div>
+                </div>
+            </div>
             <div class="grid">
                 <article class="card">
                     <img src="https://source.unsplash.com/random/140x144" alt="Comida 1">
@@ -80,7 +62,7 @@
                 <div class="modal-footer">
                     <div class="modal-quantity">
                         <button type="button" onclick="decreaseQuantity()">-</button>
-                        <input type="number" id="quantity" value="1" min="1">
+                        <input type="number" id="quantity" value="1" min="1" oninput="updateTotalPrice()">
                         <button type="button" onclick="increaseQuantity()">+</button>
                     </div>
                     <button type="button" class="button-add">Adicionar (R$ <span id="item-price">0,00</span>)</button>
@@ -91,6 +73,8 @@
 
 
     <script>
+        let selectedItemPrice = 0;
+
         function toggleClearIcon(input) {
             const clearIcon = input.nextElementSibling;
             clearIcon.style.display = input.value ? 'inline' : 'none';
@@ -111,9 +95,20 @@
 
         function search() {
             const input = document.querySelector('[name="search"]');
-            const searchTerm = input.value;
+            const searchTerm = input.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
             console.log('Pesquisar:', searchTerm);
-            // Implemente sua lógica de pesquisa aqui
+
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                const name = card.querySelector('.name-item').textContent.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+                if (name.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            document.getElementById('item-modal').style.display = 'none';
         }
 
         document.querySelectorAll('.card').forEach(card => {
@@ -121,6 +116,10 @@
                 const imageSrc = this.querySelector('img').src;
                 const title = this.querySelector('.name-item').textContent;
                 const modal = document.getElementById('item-modal');
+                const priceElement = this.querySelector('.cost-item');
+                selectedItemPrice = parseFloat(priceElement.textContent.replace('R$', '').trim());
+                document.getElementById('quantity').value = 1; // Reseta a quantidade para 1
+                updateTotalPrice();
                 modal.querySelector('.modal-image').src = imageSrc;
                 modal.querySelector('.modal-title').textContent = title;
                 modal.style.display = 'block';
@@ -141,6 +140,7 @@
             const quantityInput = document.getElementById('quantity');
             const currentQuantity = parseInt(quantityInput.value);
             quantityInput.value = currentQuantity + 1;
+            updateTotalPrice();
         }
 
         function decreaseQuantity() {
@@ -149,7 +149,15 @@
             if (currentQuantity > 1) {
                 quantityInput.value = currentQuantity - 1;
             }
+            updateTotalPrice();
         }
+
+        function updateTotalPrice() {
+            const quantity = parseInt(document.getElementById('quantity').value);
+            const totalPrice = (quantity * selectedItemPrice).toFixed(2);
+            document.getElementById('item-price').textContent = totalPrice;
+        }
+
 
     </script>
 </body>
