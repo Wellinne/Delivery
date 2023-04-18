@@ -11,11 +11,10 @@ Scenario: Adição de novo item com sucesso
 
 Scenario: Excluir item do cardápio com sucesso
     Given que estou logado como administrador
-    When eu acessar a seção "Gerenciar cardápio"
+    When eu acessar a opção "Gerenciar cardápio"
     And selecionar um item
-    And clicar no botão "Excluir item"
-    Then uma confirmação de exclusão deve ser exibida
-    And ao confirmar a exclusão, o item selecionado deve ser removido do cardápio
+    And clicar no botão "Deletar"
+    Then o item selecionado deve ser removido do cardápio
 
 Scenario: Edição dos campos de um item com sucesso
     Given que estou logado como administrador
