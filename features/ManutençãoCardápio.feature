@@ -23,3 +23,10 @@ Scenario: Edição dos campos de um item com sucesso
     And editar os campos que eu quero
     And clicar em "Salvar"
     Then o item com os dados atualizado deve ser exibido no cardápio
+
+Scenario: Sair do Gerenciar Cardápio/Cancelar alterações
+    Given que estou logo como administrador
+    And estou na página "Gerenciar cardápio"
+    And fiz alguma alteração no cardápio
+    When clicar em "Cancelar"
+    Then voltará para página inicial
