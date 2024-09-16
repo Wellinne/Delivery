@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucho Cheio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:ital,wght@0,400;0,700;1,400&family=Roboto:wght@500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+</head>
+
+<body class="main-bg">
+    <section id="cardapio">
+        <div class="main-content grid-one-content">
+            <div id="heading-cardapio">
+                <h2>Cardápio</h2>
+                <div class="search-bar">
+                    <div class="search-input-wrapper">
+                        <i class="fa fa-search search-icon" onclick="search()"></i>
+                        <input type="text" placeholder="Busque por um item" name="search"
+                            oninput="toggleClearIcon(this)" onkeyup="checkForEnter(event)">
+                        <i class="fa fa-times clear-icon" onclick="clearSearch(this)" style="display: none;"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="grid">
+                <article class="card">
+                    <img src="https://source.unsplash.com/random/140x144" alt="Comida 1">
+                    <h3 class="name-item">Pizza Calabresa</h3>
+                    <span class="cost-item">R$ 50,00</span>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="item-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img class="modal-image" src="" alt="Item Imagem">
+            <div class="modal-info">
+                <h3 class="modal-title">Nome do item</h3>
+                <p class="modal-ingredients">Ingredientes: </p>
+                <div class="modal-ingredients-list">ingredientes</div>
+                <div class="modal-extras">
+                    <label for="extra">Adicionais:</label>
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" name="extra1" id="extra1">
+                        <label for="extra1">Extra 1</label>
+                    </div>
+                </div>
+                <div class="modal-observations">
+                    <label for="observations">Observações:</label>
+                    <textarea id="observations" name="observations"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <div class="modal-quantity">
+                        <button type="button" onclick="decreaseQuantity()">-</button>
+                        <input type="number" id="quantity" value="1" min="1" oninput="updateTotalPrice()">
+                        <button type="button" onclick="increaseQuantity()">+</button>
+                    </div>
+                    <button type="button" class="button-add">Adicionar (R$ <span id="item-price">0,00</span>)</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let selectedItemPrice = 0;
+
+        function toggleClearIcon(input) {
+            const clearIcon = input.nextElementSibling;
+            clearIcon.style.display = input.value ? 'inline' : 'none';
+        }
+
+        function clearSearch(clearIcon) {
+            const input = clearIcon.previousElementSibling;
+            input.value = '';
+            toggleClearIcon(input);
+            input.focus();
+        }
+
+        function checkForEnter(event) {
+            if (event.keyCode === 13) {
+                search();
+            }
+        }
+
+        function search() {
+            const input = document.querySelector('[name="search"]');
+            const searchTerm = input.value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+            console.log('Pesquisar:', searchTerm);
+
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                const name = card.querySelector('.name-item').textContent.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+                if (name.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            document.getElementById('item-modal').style.display = 'none';
+        }
+
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', function () {
+                const imageSrc = this.querySelector('img').src;
+                const title = this.querySelector('.name-item').textContent;
+                const modal = document.getElementById('item-modal');
+                const priceElement = this.querySelector('.cost-item');
+                selectedItemPrice = parseFloat(priceElement.textContent.replace('R$', '').trim());
+                document.getElementById('quantity').value = 1; // Reseta a quantidade para 1
+                updateTotalPrice();
+                modal.querySelector('.modal-image').src = imageSrc;
+                modal.querySelector('.modal-title').textContent = title;
+                modal.style.display = 'block';
+            });
+        });
+
+        document.querySelector('.close').addEventListener('click', function () {
+            document.getElementById('item-modal').style.display = 'none';
+        });
+
+        window.addEventListener('click', function (event) {
+            const modal = document.getElementById('item-modal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+        function increaseQuantity() {
+            const quantityInput = document.getElementById('quantity');
+            const currentQuantity = parseInt(quantityInput.value);
+            quantityInput.value = currentQuantity + 1;
+            updateTotalPrice();
+        }
+
+        function decreaseQuantity() {
+            const quantityInput = document.getElementById('quantity');
+            const currentQuantity = parseInt(quantityInput.value);
+            if (currentQuantity > 1) {
+                quantityInput.value = currentQuantity - 1;
+            }
+            updateTotalPrice();
+        }
+
+        function updateTotalPrice() {
+            const quantity = parseInt(document.getElementById('quantity').value);
+            const totalPrice = (quantity * selectedItemPrice).toFixed(2);
+            document.getElementById('item-price').textContent = totalPrice;
+        }
+
+
+    </script>
+</body>
+
+</html>
