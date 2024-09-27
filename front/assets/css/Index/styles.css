@@ -1,0 +1,163 @@
+:root{
+    --cor1: #FFF2DA;
+    --cor2: #FFBA4D;
+    --cor3: #FF9D01;
+    --cor4: #804E00;
+    --cor5: #161616;
+    --cor6: #BDBDBD;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+    background-color: var(--cor5);
+    background-size: cover;
+    background-position: center center;
+}
+
+h1, h2, h3, h4, h5, h5{
+    font-size: 2rem;
+}
+
+a{
+    text-decoration: none;
+}
+
+.main-content{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-left: 20px;
+}
+
+.cabecalho{
+    background-color: white;
+    width: 100%;
+}
+
+.cabecalho-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center center;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.cabecalho h1{
+    font-size: 1rem;
+}
+
+.cabecalho h1 a{
+    color: inherit;
+}
+
+.cabecalho nav{
+    list-style: none;
+    display: flex;
+}
+
+.cabecalho li div{
+    padding: 1rem;
+}
+
+.main-right{
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.cost{
+    font-size: .75rem;
+    line-height: 1rem;
+    display: block;
+    color: var(--cor3);
+    padding-left: 3px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.items {
+    font-size: .625rem;
+    line-height: .75rem;
+    display: block;
+    color: var(--cor3);
+    padding-left: 3px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    display: inline;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.bag{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction:row;
+    padding-left: 10px;
+}
+
+.containerImage{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+.cabecalho
+{
+    height:100px;
+}
+.logo-cabecalho
+{
+    float:left;
+}
+.corpo
+{
+    position:relative;
+    overflow:hidden;
+}
+.cardapio
+{
+    display: block;
+}
+.cardapio, .cardapio:before
+{
+    width:  1440px;
+    height: 1024px;
+}
+.cardapio:before
+{
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    background:#fff;
+    z-index:-1;
+    content:'';
+}
+.espacamento
+{
+    padding:20px;
+}
+.rodape
+{
+    background-color: #fff;
+    padding:50px;
+    text-align:right;
+}
+#corpright 
+{
+    display: block;
+    background: #FF9D01;
+    padding:13px 20px;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Bucho Cheio</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/Informacoes/styles.css">
+        <link rel="stylesheet" href="fontawesome/css/all.min.css">
+        <link rel="shortcut icon" href="assets/images/burguer.ico" type="image/x-icon">
+        <title>Informacoes Pedido</title>
+    </head>
+    <body>
+        <div>
+            <aside class="cabecalho">
+                <section class="main-content cabecalho-content">
+                    <a href="index.html" class="containerImage">
+                        <h1><img src="assets/images/logo.png" height="40" alt="logo Bucho Cheio"></h1>
+                    </a>
+                    <nav class="main-right">
+                        <li class="user">
+                            <p><i class="fa-solid fa-user" style="color: #ff9d01;"></i></p>
+                        </li>
+                        <li class="bag">
+                            <p class="imagem2"><i class="fa-solid fa-bag-shopping" style="color: #ff9d01;"></i></p>
+                            <p><span class="cost">R$ 0,00</span>
+                                <span class="items">0 itens</span>
+                            </p>
+                        </li>
+                    </nav>
+                </section>
+            </aside>
+
+            <div class="menu">
+                <h2>Informações Pedido</h2>
+			</div>
+
+            <div class="corpo">
+                <div class="cardapio">
+                    <div class="espacamento">
+                        <div class="item">
+                            <img class="img-item" src="https://img.freepik.com/fotos-gratis/hamburguer-de-vista-frontal-em-um-carrinho_141793-15542.jpg?size=626&ext=jpg"><br>
+                            <h1>Staker</h1>
+                            <h1>19,99</h1>
+                            <form name="Observacoes" action="" method="post">
+                                <textarea>
+                                </textarea>
+                            </form>                            
+                        </div>
+                    </div>
+                </div> 
+
+                <div class="lateral">
+                    <div class="espacamento">
+                        <div class="ingredientes">
+                            <h2><b>Ingredientes:</b></h2>
+                                <h3>
+                                    * 500g de acém;<br>
+                                    * Azeite;<br>
+                                    * Sal e pimenta-do-reino;<br>
+                                    * Alface;<br>
+                                    * Tomate;<br>
+                                    * Pão de hambúrguer;<br>
+                                    * Maionese verde;<br>
+                                    * Mussarela comum ;<br>
+                                    * Cebola.<br>
+                                </h3>
+                        </div>
+                        <br><br><br><br><br><br><br><br><br><br>
+                        <form name="adicionais" action="" method="post">
+                            <h2><b>Adicionais:(+3 Reais)</b></h2><br>
+                            <label for="POST-bacon">Bacon
+                            <input type="checkbox" id="POST-bacon" name="bacon"/>
+                            <label for="POST-calabresa">Calabresa
+                            <input type="checkbox" id="POST-calabresa" name="calabresa">
+                            <label for="POST-milhoervilha">Milho/Ervilha
+                            <input type="checkbox" id="POST-milho" name="milhoervilha">
+                            <label for="POST-azeitona">Azeitona
+                            <input type="checkbox" id="POST-azeitona" name="azeitona">
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rodape">
+                <input id="menos" type="submit" value="-">
+                <input id="qtd" type="submit" value="1">
+                <input id="mais" type="submit" value="+">
+                <input id="valor" type="submit" value="19,99">
+                <input id="save" type="submit" value="Adicionar">
+            </div>
+        </div>
+        
+    </body>
+</html>
